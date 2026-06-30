@@ -32,6 +32,9 @@ const transporter = nodemailer.createTransport({
   host: config.smtpHost,
   port: config.smtpPort,
   secure: config.smtpSecure,
+  connectionTimeout: 10000,
+  greetingTimeout: 10000,
+  socketTimeout: 10000,
   auth: config.smtpUser && config.smtpPass ? {
     user: config.smtpUser,
     pass: config.smtpPass
@@ -151,6 +154,11 @@ app.get("/health", (_req, res) => {
 });
 
 app.post("/api/contact", async (req, res) => {
+  console.info("POST /api/contact received", {
+    ip: req.ip,
+    origin: req.headers.origin || undefined
+  });
+
   const data = collectFormData(req.body || {});
 
   if (data.website) {
@@ -165,9 +173,15 @@ app.post("/api/contact", async (req, res) => {
     return;
   }
 
+  console.info("Contact request validation passed", {
+    target: data.target,
+    hasOrganization: Boolean(data.organization),
+    sourcePage: data.sourcePage || undefined
+  });
+
   if (!config.smtpHost) {
     console.error("SMTP_HOST is not configured");
-    res.status(500).json({ error: "Servizio email non configurato" });
+    res.status(500).json({ success: false, error: "Errore durante l'invio della richiesta" });
     return;
   }
 
@@ -175,6 +189,11 @@ app.post("/api/contact", async (req, res) => {
   const { text, html } = buildEmail(data, ip);
 
   try {
+    console.info("Starting transporter.sendMail", {
+      target: data.target,
+      to: config.mailTo
+    });
+
     await transporter.sendMail({
       from: config.mailFrom,
       to: config.mailTo,
@@ -184,17 +203,17 @@ app.post("/api/contact", async (req, res) => {
       html
     });
 
-    console.info("Contact email sent", {
+    console.info("transporter.sendMail succeeded", {
       target: data.target,
       hasOrganization: Boolean(data.organization),
       sourcePage: data.sourcePage || undefined
     });
     res.json({ ok: true });
   } catch (error) {
-    console.error("Contact email failed", {
+    console.error("transporter.sendMail failed", {
       message: error instanceof Error ? error.message : "Unknown error"
     });
-    res.status(502).json({ error: "Invio email non riuscito" });
+    res.status(502).json({ success: false, error: "Errore durante l'invio della richiesta" });
   }
 });
 
