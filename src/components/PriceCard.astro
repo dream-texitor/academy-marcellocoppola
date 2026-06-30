@@ -1,0 +1,60 @@
+---
+interface Props {
+  badge?: string;
+  title: string;
+  price: string;
+  details: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  badge = "Percorso documentabile",
+  title,
+  price,
+  details,
+  ctaLabel = "Richiedi una proposta",
+  ctaHref = "/richiedi-proposta-formazione-ai"
+} = Astro.props;
+---
+
+<aside class="price-card" aria-label={title}>
+  <span class="price-badge">{badge}</span>
+  <h2>{title}</h2>
+  <p class="price">{price}</p>
+  <p class="details">{details}</p>
+  <a class="button button--primary" href={ctaHref}>{ctaLabel}</a>
+</aside>
+
+<style>
+  .price-card {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--teal);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 22px;
+    box-shadow: var(--shadow);
+  }
+
+  .price-card h2 {
+    font-size: 1.22rem;
+  }
+
+  .price-badge {
+    width: fit-content;
+    border: 1px solid rgba(17, 140, 132, 0.28);
+    border-radius: 999px;
+    color: var(--teal-dark);
+    padding: 3px 9px;
+    font-size: 0.76rem;
+    font-weight: 850;
+  }
+
+  .details {
+    color: var(--slate);
+    font-weight: 650;
+  }
+</style>

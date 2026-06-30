@@ -2,6 +2,7 @@
 import Faq from "@components/Faq.astro";
 import Hero from "@components/Hero.astro";
 import MethodSection from "@components/MethodSection.astro";
+import PriceCard from "@components/PriceCard.astro";
 import TargetCard from "@components/TargetCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { personJsonLd, site } from "@data/site";
@@ -39,9 +40,14 @@ const coursesJsonLd = [
     secondaryLabel="Scopri i percorsi"
     secondaryHref="#percorsi"
     microcopy="Corsi in presenza e online. Programmi personalizzabili per settore, ruolo e livello di competenza."
-  />
+  >
+    <aside class="hero-panel" slot="aside" aria-label="Sintesi obbligo AI Literacy">
+      <span class="pill">AI Act · art. 4</span>
+      <p>L'obbligo di AI Literacy richiede misure formative adeguate, proporzionate al contesto e documentabili.</p>
+    </aside>
+  </Hero>
 
-  <section class="section">
+  <section class="section section--tight">
     <div class="container grid grid--2">
       <div class="stack">
         <p class="eyebrow">AI Act</p>
@@ -76,13 +82,16 @@ const coursesJsonLd = [
         <p class="eyebrow">Percorso in evidenza</p>
         <h2>AI Literacy per Hotel e Strutture Ricettive</h2>
         <p>Un percorso di 4 ore, pensato per titolari, manager, receptionist, addetti booking, marketing e customer care. Include formazione pratica, esercitazioni su casi tipici dell'ospitalità, test finale, attestati, mini-policy interna e fascicolo documentale.</p>
-        <a class="button button--primary" href="/corso-ai-literacy-hotel-strutture-ricettive">Scopri il percorso Hotel</a>
+        <a class="button button--primary" href="/corso-ai-literacy-hotel-strutture-ricettive">Richiedi il percorso</a>
       </div>
-      <div class="card card--shadow stack">
-        <span class="pill">Pacchetto Standard Hotel</span>
-        <p class="price">690 € + IVA</p>
-        <p class="muted">4 ore · fino a 15 partecipanti · fascicolo documentale incluso</p>
-      </div>
+      <PriceCard
+        badge="In evidenza"
+        title="Pacchetto Standard Hotel"
+        price="690 € + IVA"
+        details="4 ore · fino a 15 partecipanti · fascicolo documentale incluso"
+        ctaLabel="Richiedi il percorso"
+        ctaHref="/corso-ai-literacy-hotel-strutture-ricettive"
+      />
     </div>
   </section>
 

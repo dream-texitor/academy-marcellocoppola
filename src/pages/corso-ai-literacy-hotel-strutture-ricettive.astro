@@ -1,5 +1,6 @@
 ---
 import Hero from "@components/Hero.astro";
+import PriceCard from "@components/PriceCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { site } from "@data/site";
 
@@ -26,10 +27,25 @@ const output = ["programma del corso", "registro presenze", "test finale di appr
     title="Corso AI Literacy per Hotel e Strutture Ricettive"
     subtitle="Percorso formativo documentabile per adempiere agli obblighi di alfabetizzazione sull'intelligenza artificiale previsti dall'AI Act."
     text="Se il personale utilizza strumenti di intelligenza artificiale per email, recensioni, traduzioni, messaggi agli ospiti, marketing o customer care, la struttura deve adottare misure adeguate di formazione e consapevolezza."
-    primaryLabel="Richiedi il percorso per la tua struttura"
-    secondaryLabel="Scarica la scheda"
+    primaryLabel="Richiedi il percorso"
+    secondaryLabel="Richiedi informazioni"
     secondaryHref="/richiedi-proposta-formazione-ai"
-  />
+  >
+    <PriceCard
+      slot="aside"
+      badge="Pacchetto hotel"
+      title="Pacchetto Standard Hotel"
+      price="690 € + IVA"
+      details="4 ore · fino a 15 partecipanti · fascicolo documentale incluso"
+      ctaLabel="Richiedi il percorso"
+    />
+  </Hero>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="evidence">L'AI Act richiede misure di AI Literacy. Il percorso aiuta la struttura a formare il personale e conservare documentazione dell'attività svolta.</div>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container grid grid--2">
@@ -39,11 +55,13 @@ const output = ["programma del corso", "registro presenze", "test finale di appr
         <p>Per una struttura ricettiva, il tema diventa concreto quando il personale usa strumenti come ChatGPT, Gemini, Copilot, traduttori automatici, generatori di testi, software gestionali o piattaforme di customer care con funzioni IA.</p>
         <div class="evidence">Se il personale usa l'IA, la struttura deve poter dimostrare di aver adottato misure formative adeguate.</div>
       </div>
-      <aside class="card card--shadow stack">
-        <span class="pill">Pacchetto Standard Hotel</span>
-        <p class="price">690 € + IVA</p>
-        <p>4 ore · fino a 15 partecipanti · fascicolo documentale incluso</p>
-      </aside>
+      <PriceCard
+        badge="Percorso commerciale"
+        title="Pacchetto Standard Hotel"
+        price="690 € + IVA"
+        details="4 ore · fino a 15 partecipanti · fascicolo documentale incluso"
+        ctaLabel="Richiedi una proposta"
+      />
     </div>
   </section>
 

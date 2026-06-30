@@ -3,15 +3,32 @@ import { methodItems } from "@data/site";
 ---
 
 <section class="section section--soft" id="percorsi">
-  <div class="container grid grid--2">
+  <div class="container grid grid--2 method-grid">
     <div class="stack">
       <p class="eyebrow">Metodo</p>
       <h2>Un percorso formativo documentabile</h2>
       <p class="lead">Marcello Coppola Academy non propone semplici corsi introduttivi su ChatGPT, ma percorsi di AI Literacy costruiti per lasciare all'organizzazione una traccia ordinata dell'attività svolta.</p>
       <p class="muted">L'obiettivo è aiutare l'organizzazione a dimostrare di aver adottato misure concrete di alfabetizzazione sull'intelligenza artificiale.</p>
     </div>
-    <ul class="list card">
+    <ul class="list card method-list">
       {methodItems.map((item) => <li>{item}</li>)}
     </ul>
   </div>
 </section>
+
+<style>
+  .method-grid {
+    align-items: start;
+  }
+
+  .method-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 14px;
+  }
+
+  @media (max-width: 620px) {
+    .method-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
