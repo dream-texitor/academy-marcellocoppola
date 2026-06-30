@@ -1,0 +1,45 @@
+---
+import { faq } from "@data/site";
+---
+
+<section class="section">
+  <div class="container stack">
+    <div class="stack">
+      <p class="eyebrow">FAQ</p>
+      <h2>Domande frequenti</h2>
+    </div>
+    <div class="faq-list">
+      {faq.map((item) => (
+        <details class="faq-item">
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .faq-item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 18px 20px;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    color: var(--navy);
+    font-weight: 850;
+  }
+
+  .faq-item p {
+    margin-top: 12px;
+    color: var(--slate);
+  }
+</style>

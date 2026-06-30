@@ -1,0 +1,95 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle: string;
+  text?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  microcopy?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  text,
+  primaryLabel = "Richiedi una proposta",
+  primaryHref = "/richiedi-proposta-formazione-ai",
+  secondaryLabel,
+  secondaryHref,
+  microcopy
+} = Astro.props;
+---
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="stack">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p class="lead">{subtitle}</p>
+      {text && <p class="hero-text">{text}</p>}
+      <div class="button-row">
+        <a class="button button--primary" href={primaryHref}>{primaryLabel}</a>
+        {secondaryLabel && secondaryHref && <a class="button button--secondary" href={secondaryHref}>{secondaryLabel}</a>}
+      </div>
+      {microcopy && <p class="microcopy">{microcopy}</p>}
+    </div>
+    <aside class="hero-panel" aria-label="Sintesi percorso">
+      <span class="pill">Percorsi documentabili</span>
+      <p>AI Literacy, formazione AI Act, uso consapevole dell'IA, buone pratiche operative e documentazione finale per organizzazioni e cittadini.</p>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 84px 0 70px;
+    background:
+      linear-gradient(110deg, rgba(244, 247, 250, 0.94), rgba(255, 255, 255, 0.96)),
+      url("data:image/svg+xml,%3Csvg width='1200' height='720' viewBox='0 0 1200 720' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d9e2ec' stroke-width='1'%3E%3Cpath d='M0 160h1200M0 320h1200M0 480h1200M160 0v720M360 0v720M560 0v720M760 0v720M960 0v720'/%3E%3C/g%3E%3Cg fill='%23118c84' fill-opacity='.12'%3E%3Ccircle cx='960' cy='170' r='80'/%3E%3Ccircle cx='1030' cy='250' r='28'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 42px;
+    align-items: end;
+  }
+
+  .hero-text {
+    max-width: 780px;
+    color: var(--slate);
+  }
+
+  .microcopy {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .hero-panel {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 26px;
+    box-shadow: var(--shadow);
+  }
+
+  .hero-panel p {
+    margin-top: 16px;
+    color: var(--slate);
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      padding: 64px 0 54px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

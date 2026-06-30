@@ -1,0 +1,100 @@
+---
+import Hero from "@components/Hero.astro";
+import PackageCard from "@components/PackageCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+
+const packages = [
+  { name: "AI Literacy essenziale", price: "390 € + IVA", duration: "3 ore", participants: "fino a 10", includes: "slide, registro presenze, attestati", description: "Introduzione all'IA generativa, rischi principali, buone pratiche e cenni all'AI Act." },
+  { name: "AI Literacy aziendale con fascicolo documentale", price: "690 € + IVA", duration: "4 ore", participants: "fino a 15", includes: "check iniziale, test finale, mini-policy, fascicolo documentale", description: "Percorso consigliato per organizzazioni che vogliono formazione pratica e documentazione ordinata." },
+  { name: "AI Literacy, policy interna e casi d'uso personalizzati", price: "990 € + IVA", duration: "6 ore", participants: "fino a 20", includes: "policy personalizzata, casi d'uso aziendali, follow-up entro 30 giorni", description: "Percorso avanzato per organizzazioni che vogliono integrare l'IA nei propri processi in modo più strutturato." }
+];
+---
+
+<BaseLayout
+  title="Corso AI Literacy per aziende e professionisti | Marcello Coppola Academy"
+  description="Formazione AI Literacy per aziende, studi professionali, attività commerciali e uffici. Percorsi documentabili su AI Act, uso consapevole dell'IA, privacy e buone pratiche."
+  canonicalPath="/corso-ai-literacy-aziende-professionisti"
+  structuredData={{ "@context": "https://schema.org", "@type": "Course", name: "Corso AI Literacy per aziende e professionisti", provider: { "@type": "Organization", name: site.name }, description: "Corso intelligenza artificiale aziende, corso ChatGPT aziende e formazione IA per PMI." }}
+>
+  <Hero
+    eyebrow="Aziende e professionisti"
+    title="Corso AI Literacy per aziende, professionisti e attività commerciali"
+    subtitle="Percorsi formativi documentabili per usare l'intelligenza artificiale in modo consapevole, sicuro e coerente con l'AI Act."
+  />
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>L'AI Act richiede misure di AI Literacy</h2>
+        <p>La formazione AI Act riguarda anche le organizzazioni che utilizzano strumenti di IA nel lavoro quotidiano. Non serve essere una grande azienda tecnologica: conta l'uso concreto da parte di dipendenti, collaboratori e professionisti.</p>
+      </div>
+      <div class="stack">
+        <h2>A chi si rivolge</h2>
+        <ul class="list">
+          <li>piccole e medie imprese</li>
+          <li>negozi e attività commerciali</li>
+          <li>studi professionali e consulenti</li>
+          <li>agenzie di servizi e uffici amministrativi</li>
+          <li>attività extralberghiere e organizzazioni locali</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>L'IA nel lavoro quotidiano</h2>
+        <ul class="list">
+          <li>scrittura di email e comunicazioni ai clienti</li>
+          <li>preparazione di preventivi e testi commerciali</li>
+          <li>traduzione e sintesi di documenti</li>
+          <li>creazione di contenuti per sito e social</li>
+          <li>supporto al customer care</li>
+          <li>preparazione di presentazioni e materiali informativi</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <h2>I rischi da gestire</h2>
+        <ul class="list">
+          <li>errori e informazioni inventate</li>
+          <li>inserimento improprio di dati personali</li>
+          <li>uso di informazioni riservate</li>
+          <li>bias e risultati distorti</li>
+          <li>confusione tra supporto automatico e decisione umana</li>
+          <li>rischi reputazionali nella comunicazione</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <h2>Tre livelli di intervento</h2>
+      <div class="grid grid--3">
+        {packages.map((item) => <PackageCard {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>Cosa include la formazione</h2>
+        <p>Ogni corso AI Literacy combina spiegazione chiara, esempi pratici, buone pratiche, attenzione a privacy e responsabilità, verifica finale e materiali documentali proporzionati al percorso scelto.</p>
+      </div>
+      <div class="stack">
+        <h2>Documentare le misure adottate</h2>
+        <p>Il fascicolo documentale aiuta aziende e professionisti a conservare evidenza delle misure formative adottate rispetto all'obbligo formazione intelligenza artificiale e agli usi effettivi dell'IA.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <div class="legal-note">{site.legalNote}</div>
+      <a class="button button--primary" href="/richiedi-proposta-formazione-ai">Richiedi una proposta</a>
+    </div>
+  </section>
+</BaseLayout>

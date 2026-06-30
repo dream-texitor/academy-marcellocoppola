@@ -1,0 +1,141 @@
+---
+import { navItems, site } from "@data/site";
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Marcello Coppola Academy home">
+      <span class="brand-mark">MCA</span>
+      <span>
+        <strong>{site.name}</strong>
+        <small>{site.payoff}</small>
+      </span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Apri menu" aria-expanded="false" data-menu-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav" aria-label="Navigazione principale" data-menu>
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const menu = document.querySelector("[data-menu]");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    menu?.classList.toggle("is-open", !isOpen);
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    z-index: 20;
+    top: 0;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+  }
+
+  .header-inner {
+    display: flex;
+    min-height: 78px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+  }
+
+  .brand-mark {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    border-radius: var(--radius);
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.78rem;
+    font-weight: 900;
+  }
+
+  .brand strong,
+  .brand small {
+    display: block;
+  }
+
+  .brand small {
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--slate);
+    font-size: 0.9rem;
+    font-weight: 750;
+  }
+
+  .main-nav a:hover {
+    color: var(--teal-dark);
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 4px auto;
+    background: var(--navy);
+  }
+
+  @media (max-width: 1080px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .main-nav {
+      position: absolute;
+      top: 78px;
+      right: 20px;
+      left: 20px;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .main-nav.is-open {
+      display: flex;
+    }
+
+    .main-nav a {
+      padding: 10px 8px;
+    }
+  }
+</style>

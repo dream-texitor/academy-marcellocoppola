@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  href: string;
+  cta: string;
+}
+
+const { title, text, href, cta } = Astro.props;
+---
+
+<article class="card target-card">
+  <h3>{title}</h3>
+  <p>{text}</p>
+  <a href={href}>{cta}</a>
+</article>
+
+<style>
+  .target-card {
+    display: grid;
+    gap: 14px;
+  }
+
+  .target-card p {
+    color: var(--slate);
+  }
+
+  .target-card a {
+    align-self: end;
+    color: var(--teal-dark);
+    font-weight: 850;
+  }
+</style>

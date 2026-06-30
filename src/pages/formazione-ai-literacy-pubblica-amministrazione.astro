@@ -1,0 +1,97 @@
+---
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+---
+
+<BaseLayout
+  title="AI Literacy per Pubblica Amministrazione e Comuni | Marcello Coppola Academy"
+  description="Percorsi di formazione AI Literacy per dipendenti pubblici, Comuni ed enti locali. Uso consapevole dell'intelligenza artificiale, AI Act, trasparenza e responsabilità."
+  canonicalPath="/formazione-ai-literacy-pubblica-amministrazione"
+>
+  <Hero
+    eyebrow="PA e Comuni"
+    title="AI Literacy per Comuni e Pubblica Amministrazione"
+    subtitle="Percorsi formativi per dipendenti pubblici e iniziative di alfabetizzazione sull'intelligenza artificiale rivolte ai cittadini."
+    primaryLabel="Richiedi una proposta per il tuo Comune"
+  />
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>AI Literacy e responsabilità della Pubblica Amministrazione</h2>
+        <p>La formazione intelligenza artificiale Comuni aiuta gli enti a usare gli strumenti digitali con attenzione a trasparenza, responsabilità amministrativa, privacy e valore pubblico.</p>
+      </div>
+      <div class="stack">
+        <h2>Due percorsi per gli enti locali</h2>
+        <p><strong>Formazione per dipendenti pubblici:</strong> per uffici, servizi, comunicazione istituzionale, segreterie, sportelli al cittadino e responsabili di procedimento.</p>
+        <p><strong>AI Literacy per cittadini:</strong> incontri divulgativi promossi da Comuni, biblioteche, associazioni, consulte, sportelli digitali o centri civici.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>IA nei processi amministrativi e comunicativi</h2>
+        <ul class="list">
+          <li>bozze di testi e comunicazioni istituzionali</li>
+          <li>sintesi di documenti non riservati</li>
+          <li>preparazione di FAQ e materiali informativi</li>
+          <li>traduzione di comunicazioni</li>
+          <li>supporto alla comunicazione social dell'ente</li>
+          <li>supporto agli sportelli digitali</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <h2>Rischi specifici per la PA</h2>
+        <ul class="list">
+          <li>inserimento improprio di dati personali o sensibili</li>
+          <li>uso di informazioni riservate</li>
+          <li>testi non verificati rivolti ai cittadini</li>
+          <li>confusione tra supporto automatico e decisione amministrativa</li>
+          <li>mancanza di trasparenza sull'uso degli strumenti</li>
+          <li>dipendenza da strumenti esterni non controllati</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>Formazione AI Literacy per dipendenti pubblici</h2>
+        <p>Formato indicativo: 4 ore · fino a 20 partecipanti · in presenza o online.</p>
+        <ul class="list">
+          <li>Modulo 1 — Intelligenza artificiale e IA generativa</li>
+          <li>Modulo 2 — AI Act e AI Literacy</li>
+          <li>Modulo 3 — Uso dell'IA negli uffici pubblici</li>
+          <li>Modulo 4 — Dati, privacy e informazioni riservate</li>
+          <li>Modulo 5 — Controllo umano e responsabilità amministrativa</li>
+          <li>Modulo 6 — Regole operative per l'ente</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <h2>Output documentali</h2>
+        <ul class="list">
+          <li>registro presenze</li>
+          <li>test finale</li>
+          <li>attestati di partecipazione</li>
+          <li>programma del corso</li>
+          <li>mini-policy interna</li>
+          <li>relazione conclusiva</li>
+        </ul>
+        <div class="evidence">Proposta su richiesta in base a numero di partecipanti, modalità e articolazione del percorso.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <h2>Approccio orientato al valore pubblico</h2>
+      <p class="lead">La AI Literacy Pubblica Amministrazione deve aiutare l'ente a usare l'IA come supporto, non come sostituzione della responsabilità amministrativa e del controllo umano.</p>
+      <div class="legal-note">{site.legalNote}</div>
+      <a class="button button--primary" href="/richiedi-proposta-formazione-ai">Richiedi una proposta per il tuo Comune</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,18 @@
+
+> marcello-coppola-academy@1.0.0 dev
+> astro dev --host 127.0.0.1
+
+21:16:54 [types] Generated 2ms
+21:16:54 [WARN] [vite] Failed to resolve dependency: [36mastro > cssesc[39m, present in 'optimizeDeps.include'
+21:16:54 [WARN] [vite] Failed to resolve dependency: [36mastro > aria-query[39m, present in 'optimizeDeps.include'
+21:16:54 [WARN] [vite] Failed to resolve dependency: [36mastro > axobject-query[39m, present in 'optimizeDeps.include'
+
+ astro  v4.16.19 ready in 230 ms
+
+┃ Local    http://127.0.0.1:4321/
+
+21:16:54 watching for file changes...
+
+ update  ▶ New version of Astro available: 7.0.4
+  Run npx @astrojs/upgrade to update
+

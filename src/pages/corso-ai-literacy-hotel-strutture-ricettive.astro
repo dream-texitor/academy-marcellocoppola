@@ -1,0 +1,127 @@
+---
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+
+const program = [
+  ["Modulo 1 — Introduzione all'Intelligenza Artificiale", "Cos'è l'IA generativa. Come funzionano strumenti come ChatGPT, Gemini e Copilot. Differenza tra supporto alla scrittura e decisione autonoma. Limiti, errori e allucinazioni."],
+  ["Modulo 2 — IA e lavoro in hotel", "Casi d'uso per reception, booking, marketing, comunicazione e customer care. Email agli ospiti, messaggi pre-arrivo e post-soggiorno, recensioni, traduzioni, testi promozionali e procedure interne."],
+  ["Modulo 3 — Prompting operativo", "Come scrivere richieste efficaci. Come indicare tono, lingua, destinatario e obiettivo. Esercitazioni su casi tipici dell'ospitalità."],
+  ["Modulo 4 — Rischi e buone pratiche", "Dati personali degli ospiti, informazioni riservate, contenuti non verificati, errori nelle risposte, uso dell'IA per immagini e contenuti promozionali, controllo umano."],
+  ["Modulo 5 — AI Act e AI Literacy", "Cos'è l'AI Literacy. Perché riguarda anche hotel e strutture ricettive. Quali misure formative può adottare l'organizzazione."],
+  ["Modulo 6 — Regole pratiche per la struttura", "Cosa si può fare con l'IA. Cosa evitare. Quali dati non inserire. Quando serve controllo umano. Come introdurre una mini-policy interna."]
+];
+
+const output = ["programma del corso", "registro presenze", "test finale di apprendimento", "attestati di partecipazione", "mini-policy interna sull'uso dell'IA", "relazione conclusiva"];
+---
+
+<BaseLayout
+  title="Corso AI Literacy per Hotel e Strutture Ricettive | Marcello Coppola Academy"
+  description="Corso AI Literacy per hotel e strutture ricettive. Formazione documentabile su AI Act, ChatGPT, intelligenza artificiale, dati degli ospiti, recensioni e customer care."
+  canonicalPath="/corso-ai-literacy-hotel-strutture-ricettive"
+  structuredData={{ "@context": "https://schema.org", "@type": "Course", name: "Corso AI Literacy per Hotel e Strutture Ricettive", provider: { "@type": "Organization", name: site.name }, description: "Formazione intelligenza artificiale hotel, corso AI hotel e fascicolo documentale." }}
+>
+  <Hero
+    eyebrow="Hotel e ospitalità"
+    title="Corso AI Literacy per Hotel e Strutture Ricettive"
+    subtitle="Percorso formativo documentabile per adempiere agli obblighi di alfabetizzazione sull'intelligenza artificiale previsti dall'AI Act."
+    text="Se il personale utilizza strumenti di intelligenza artificiale per email, recensioni, traduzioni, messaggi agli ospiti, marketing o customer care, la struttura deve adottare misure adeguate di formazione e consapevolezza."
+    primaryLabel="Richiedi il percorso per la tua struttura"
+    secondaryLabel="Scarica la scheda"
+    secondaryHref="/richiedi-proposta-formazione-ai"
+  />
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>Perché la formazione sull'IA riguarda anche gli hotel</h2>
+        <p>L'AI Act prevede che fornitori e utilizzatori di sistemi di intelligenza artificiale adottino misure per garantire un livello sufficiente di AI Literacy al personale e alle persone che utilizzano strumenti di IA per loro conto.</p>
+        <p>Per una struttura ricettiva, il tema diventa concreto quando il personale usa strumenti come ChatGPT, Gemini, Copilot, traduttori automatici, generatori di testi, software gestionali o piattaforme di customer care con funzioni IA.</p>
+        <div class="evidence">Se il personale usa l'IA, la struttura deve poter dimostrare di aver adottato misure formative adeguate.</div>
+      </div>
+      <aside class="card card--shadow stack">
+        <span class="pill">Pacchetto Standard Hotel</span>
+        <p class="price">690 € + IVA</p>
+        <p>4 ore · fino a 15 partecipanti · fascicolo documentale incluso</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container grid grid--3">
+      <article class="stack">
+        <h2>L'IA è già presente nelle attività quotidiane</h2>
+        <ul class="list">
+          <li>risposte agli ospiti via email o messaggistica</li>
+          <li>traduzioni di comunicazioni e contenuti</li>
+          <li>gestione delle recensioni online</li>
+          <li>creazione di testi per sito, offerte e social</li>
+          <li>supporto al booking e al customer care</li>
+          <li>uso di software con funzioni IA integrate</li>
+        </ul>
+      </article>
+      <article class="stack">
+        <h2>A chi è rivolto</h2>
+        <ul class="list">
+          <li>titolari e gestori</li>
+          <li>direttori e manager</li>
+          <li>receptionist</li>
+          <li>addetti booking</li>
+          <li>marketing e comunicazione</li>
+          <li>personale che comunica con gli ospiti</li>
+        </ul>
+      </article>
+      <article class="stack">
+        <h2>Cosa comprende</h2>
+        <ul class="list">
+          <li>check iniziale sugli usi dell'IA</li>
+          <li>corso di formazione di 4 ore</li>
+          <li>esempi pratici per hotel</li>
+          <li>esercitazioni guidate</li>
+          <li>slide in PDF</li>
+          <li>fascicolo documentale</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <h2>Programma</h2>
+      <div class="grid grid--2">
+        {program.map(([title, text]) => (
+          <article class="card stack">
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>Fascicolo documentale</h2>
+        <p>Al termine della formazione l'hotel riceve una documentazione ordinata dell'attività svolta.</p>
+        <ul class="list">{output.map((item) => <li>{item}</li>)}</ul>
+        <div class="evidence">Il valore del percorso non è solo formativo. È anche documentale.</div>
+      </div>
+      <div class="stack">
+        <h2>Prezzo e condizioni</h2>
+        <p class="price">690 € + IVA</p>
+        <p>Include 4 ore di formazione, fino a 15 partecipanti, materiali didattici, test finale, attestati, mini-policy e fascicolo documentale.</p>
+        <p class="muted">Eventuali costi di trasferta fuori dalla Penisola Sorrentina saranno concordati preventivamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <h2>Vuoi organizzare il percorso nella tua struttura?</h2>
+      <p class="lead">Il corso AI hotel può essere adattato a hotel, B&B, case vacanza e strutture extralberghiere.</p>
+      <div class="legal-note">{site.legalNote}</div>
+      <a class="button button--primary" href="/richiedi-proposta-formazione-ai">Richiedi una proposta</a>
+    </div>
+  </section>
+</BaseLayout>

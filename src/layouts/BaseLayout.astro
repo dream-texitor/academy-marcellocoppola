@@ -1,0 +1,36 @@
+---
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Seo from "@components/Seo.astro";
+import StructuredData from "@components/StructuredData.astro";
+import { organizationJsonLd, site } from "@data/site";
+import "@styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, canonicalPath, structuredData = [] } = Astro.props;
+const data = Array.isArray(structuredData) ? [organizationJsonLd, ...structuredData] : [organizationJsonLd, structuredData];
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102a43" />
+    <Seo title={title} description={description} canonicalPath={canonicalPath} />
+    <StructuredData data={data} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

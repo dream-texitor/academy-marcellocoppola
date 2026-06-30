@@ -1,0 +1,72 @@
+---
+import Faq from "@components/Faq.astro";
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { methodItems, site } from "@data/site";
+---
+
+<BaseLayout
+  title="Formazione AI Act e AI Literacy per aziende | Marcello Coppola Academy"
+  description="Formazione AI Act e AI Literacy per aziende, enti e professionisti. Percorsi documentabili per adempiere agli obblighi di alfabetizzazione sull'intelligenza artificiale."
+  canonicalPath="/formazione-ai-act-ai-literacy"
+>
+  <Hero
+    eyebrow="Normativa e formazione"
+    title="Formazione AI Act e AI Literacy per aziende, enti e professionisti"
+    subtitle="Percorsi documentabili per adottare misure di alfabetizzazione sull'intelligenza artificiale coerenti con l'art. 4 dell'AI Act."
+  />
+
+  <section class="section">
+    <div class="container stack">
+      <div class="grid grid--2">
+        <article class="stack">
+          <h2>Cos'è l'AI Literacy</h2>
+          <p>AI Literacy significa alfabetizzazione sull'intelligenza artificiale: competenze, conoscenze e consapevolezza necessarie per usare sistemi di IA in modo corretto, sicuro e responsabile.</p>
+        </article>
+        <article class="stack">
+          <h2>Cosa prevede l'AI Act</h2>
+          <p>L'art. 4 richiede a provider e deployer di adottare misure per garantire un livello sufficiente di AI Literacy al personale e alle persone che usano sistemi IA per loro conto.</p>
+        </article>
+      </div>
+      <div class="grid grid--2">
+        <article class="card stack">
+          <h2>Chi è coinvolto</h2>
+          <p>Aziende, enti, professionisti, hotel, uffici, Pubbliche Amministrazioni e organizzazioni che utilizzano strumenti IA nel lavoro quotidiano.</p>
+        </article>
+        <article class="card stack">
+          <h2>Cosa significa concretamente</h2>
+          <p>Se il personale usa strumenti di IA per testi, email, dati, traduzioni, documenti, customer care, marketing o servizi digitali, l'organizzazione deve preoccuparsi della formazione e della documentazione delle misure adottate.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>Cosa non prevede la norma</h2>
+        <ul class="list">
+          <li>non esiste una certificazione unica obbligatoria</li>
+          <li>non esiste un monte ore unico valido per tutti</li>
+          <li>non basta un attestato generico</li>
+          <li>conta l'adeguatezza rispetto al contesto, ai ruoli e agli usi effettivi</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <h2>Come può aiutare Marcello Coppola Academy</h2>
+        <ul class="list">
+          {methodItems.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <div class="legal-note">{site.legalNote}</div>
+      <a class="button button--primary" href="/richiedi-proposta-formazione-ai">Richiedi una proposta di formazione AI Literacy</a>
+    </div>
+  </section>
+
+  <Faq />
+</BaseLayout>

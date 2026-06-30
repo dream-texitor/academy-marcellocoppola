@@ -1,0 +1,28 @@
+21:16:54 [ERROR] [vite] Error: [31m  Failed to scan for dependencies from entries:
+  C:/Users/Utente/progetti/academy/src/components/ContactForm.astro
+C:/Users/Utente/progetti/academy/src/components/Faq.astro
+C:/Users/Utente/progetti/academy/src/components/Footer.astro
+C:/Users/Utente/progetti/academy/src/components/Header.astro
+C:/Users/Utente/progetti/academy/src/components/Hero.astro
+C:/Users/Utente/progetti/academy/src/components/MethodSection.astro
+C:/Users/Utente/progetti/academy/src/components/PackageCard.astro
+C:/Users/Utente/progetti/academy/src/components/Seo.astro
+C:/Users/Utente/progetti/academy/src/components/StructuredData.astro
+C:/Users/Utente/progetti/academy/src/components/TargetCard.astro
+C:/Users/Utente/progetti/academy/src/layouts/BaseLayout.astro
+C:/Users/Utente/progetti/academy/src/pages/corso-ai-literacy-aziende-professionisti.astro
+C:/Users/Utente/progetti/academy/src/pages/corso-ai-literacy-hotel-strutture-ricettive.astro
+C:/Users/Utente/progetti/academy/src/pages/corso-intelligenza-artificiale-cittadini.astro
+C:/Users/Utente/progetti/academy/src/pages/formazione-ai-act-ai-literacy.astro
+C:/Users/Utente/progetti/academy/src/pages/formazione-ai-literacy-pubblica-amministrazione.astro
+C:/Users/Utente/progetti/academy/src/pages/index.astro
+C:/Users/Utente/progetti/academy/src/pages/marcello-coppola-formatore-ai.astro
+C:/Users/Utente/progetti/academy/src/pages/richiedi-proposta-formazione-ai.astro
+
+  [39mspawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at Object.spawn (node:child_process:787:9)
+    at ensureServiceIsRunning (C:\Users\Utente\progetti\academy\node_modules\esbuild\lib\main.js:1975:29)
+    at Object.context (C:\Users\Utente\progetti\academy\node_modules\esbuild\lib\main.js:1874:33)
+    at prepareEsbuildScanner (file:///C:/Users/Utente/progetti/academy/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49576:24)
+    at async file:///C:/Users/Utente/progetti/academy/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:50174:26

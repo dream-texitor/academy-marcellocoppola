@@ -1,0 +1,124 @@
+---
+import Faq from "@components/Faq.astro";
+import Hero from "@components/Hero.astro";
+import MethodSection from "@components/MethodSection.astro";
+import TargetCard from "@components/TargetCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { personJsonLd, site } from "@data/site";
+
+const coursesJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: "AI Literacy per Hotel e Strutture Ricettive",
+    provider: { "@type": "Organization", name: site.name, sameAs: site.url },
+    description: "Percorso di formazione intelligenza artificiale hotel con fascicolo documentale."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: "AI Literacy per aziende e professionisti",
+    provider: { "@type": "Organization", name: site.name, sameAs: site.url },
+    description: "Corso intelligenza artificiale aziende, corso ChatGPT aziende e formazione IA dipendenti."
+  }
+];
+---
+
+<BaseLayout
+  title="AI Literacy e formazione AI Act per aziende e PA | Marcello Coppola Academy"
+  description="Percorsi di AI Literacy e formazione AI Act per aziende, hotel, professionisti, Pubbliche Amministrazioni e cittadini. Formazione pratica e documentabile sull'intelligenza artificiale."
+  canonicalPath="/"
+  structuredData={[personJsonLd, ...coursesJsonLd]}
+>
+  <Hero
+    eyebrow="Marcello Coppola Academy"
+    title="Formazione AI Literacy per aziende, hotel, professionisti, Pubbliche Amministrazioni e cittadini"
+    subtitle="Percorsi pratici e documentabili per usare l'intelligenza artificiale in modo consapevole, sicuro e coerente con l'AI Act."
+    primaryLabel="Richiedi una proposta"
+    primaryHref="/richiedi-proposta-formazione-ai"
+    secondaryLabel="Scopri i percorsi"
+    secondaryHref="#percorsi"
+    microcopy="Corsi in presenza e online. Programmi personalizzabili per settore, ruolo e livello di competenza."
+  />
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <p class="eyebrow">AI Act</p>
+        <h2>L'AI Act introduce l'obbligo di AI Literacy</h2>
+        <p>L'art. 4 dell'AI Act richiede a fornitori e utilizzatori di sistemi di intelligenza artificiale di adottare misure per garantire un livello sufficiente di alfabetizzazione sull'IA al personale e alle persone che utilizzano questi strumenti per loro conto.</p>
+        <p>Per le organizzazioni questo significa che, se dipendenti o collaboratori utilizzano strumenti di IA nel lavoro quotidiano, è necessario prevedere una formazione adeguata, proporzionata al contesto e documentabile.</p>
+      </div>
+      <div class="evidence">Non basta usare l'IA. Bisogna saperla usare, governarla e documentare le misure formative adottate.</div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <div class="stack">
+        <p class="eyebrow">Target</p>
+        <h2>Percorsi per organizzazioni e cittadini</h2>
+      </div>
+      <div class="grid grid--4">
+        <TargetCard title="Hotel e strutture ricettive" text="Formazione per titolari, manager, reception, booking, marketing e customer care. Focus su ospiti, recensioni, traduzioni, dati personali e comunicazione." cta="Vai al percorso Hotel" href="/corso-ai-literacy-hotel-strutture-ricettive" />
+        <TargetCard title="Imprese, professionisti e attività commerciali" text="Percorsi per piccole aziende, negozi, studi professionali, agenzie, uffici e attività extralberghiere che utilizzano strumenti di IA." cta="Vai al percorso Imprese" href="/corso-ai-literacy-aziende-professionisti" />
+        <TargetCard title="Comuni e Pubblica Amministrazione" text="Formazione AI Literacy Pubblica Amministrazione per dipendenti pubblici e percorsi per cittadini, con attenzione a responsabilità e trasparenza." cta="Vai al percorso PA" href="/formazione-ai-literacy-pubblica-amministrazione" />
+        <TargetCard title="Cittadini" text="Incontri divulgativi per comprendere l'IA, riconoscere rischi, deepfake, truffe, disinformazione e usare gli strumenti digitali con maggiore consapevolezza." cta="Vai al percorso Cittadini" href="/corso-intelligenza-artificiale-cittadini" />
+      </div>
+    </div>
+  </section>
+
+  <MethodSection />
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <p class="eyebrow">Percorso in evidenza</p>
+        <h2>AI Literacy per Hotel e Strutture Ricettive</h2>
+        <p>Un percorso di 4 ore, pensato per titolari, manager, receptionist, addetti booking, marketing e customer care. Include formazione pratica, esercitazioni su casi tipici dell'ospitalità, test finale, attestati, mini-policy interna e fascicolo documentale.</p>
+        <a class="button button--primary" href="/corso-ai-literacy-hotel-strutture-ricettive">Scopri il percorso Hotel</a>
+      </div>
+      <div class="card card--shadow stack">
+        <span class="pill">Pacchetto Standard Hotel</span>
+        <p class="price">690 € + IVA</p>
+        <p class="muted">4 ore · fino a 15 partecipanti · fascicolo documentale incluso</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <p class="eyebrow">Approccio</p>
+        <h2>Formazione tecnica, linguaggio comprensibile e attenzione al contesto</h2>
+      </div>
+      <div class="stack">
+        <p>L'intelligenza artificiale non è solo una questione tecnologica. Riguarda linguaggio, organizzazione, responsabilità, dati, comunicazione e processi decisionali.</p>
+        <p>Marcello Coppola Academy nasce per aiutare imprese, enti e cittadini a comprendere l'IA senza tecnicismi inutili, ma con attenzione agli aspetti normativi, operativi ed etici.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <p class="eyebrow">Profilo</p>
+        <h2>Marcello Coppola</h2>
+        <p>Formatore AI AICA, consulente e docente abilitato. Si occupa di intelligenza artificiale, linguaggio, turismo digitale, comunicazione pubblica e formazione.</p>
+        <p>Ha conseguito una laurea magistrale in Linguistica Moderna con una tesi sui Large Language Models e ha svolto un percorso di alta specializzazione in Etica e Intelligenza Artificiale.</p>
+        <a class="button button--secondary" href="/marcello-coppola-formatore-ai">Leggi il profilo completo</a>
+      </div>
+      <div class="legal-note">{site.legalNote}</div>
+    </div>
+  </section>
+
+  <Faq />
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <h2>Vuoi organizzare un percorso di AI Literacy per la tua organizzazione?</h2>
+      <p class="lead">È possibile richiedere una proposta personalizzata in base al settore, al numero di partecipanti, agli strumenti utilizzati e al livello di documentazione richiesto.</p>
+      <a class="button button--primary" href="/richiedi-proposta-formazione-ai">Richiedi una proposta</a>
+    </div>
+  </section>
+</BaseLayout>

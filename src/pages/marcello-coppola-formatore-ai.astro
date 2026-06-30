@@ -1,0 +1,76 @@
+---
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { personJsonLd } from "@data/site";
+---
+
+<BaseLayout
+  title="Marcello Coppola Formatore AI | Marcello Coppola Academy"
+  description="Marcello Coppola, Formatore AI AICA, docente abilitato e consulente su AI Literacy, intelligenza artificiale, turismo digitale, comunicazione e Pubblica Amministrazione."
+  canonicalPath="/marcello-coppola-formatore-ai"
+  structuredData={personJsonLd}
+>
+  <Hero
+    eyebrow="Chi sono"
+    title="Marcello Coppola"
+    subtitle="Formatore AI AICA, docente abilitato e consulente per l'uso consapevole dell'intelligenza artificiale."
+    text="Mi occupo di formazione, comunicazione, turismo digitale e intelligenza artificiale, con particolare attenzione all'AI Literacy, all'etica dell'IA e all'impatto delle tecnologie nei contesti organizzativi."
+    primaryLabel="Richiedi una proposta formativa"
+  />
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>Profilo professionale</h2>
+        <p>Con Marcello Coppola Academy aiuto aziende, hotel, professionisti, Pubbliche Amministrazioni e cittadini a comprendere e utilizzare l'intelligenza artificiale in modo consapevole, sicuro e documentabile.</p>
+        <h2>Un profilo tra formazione, linguaggio e innovazione digitale</h2>
+        <p>La formazione sull'IA richiede attenzione ai linguaggi, ai processi, alle responsabilità e ai contesti reali in cui persone e organizzazioni usano gli strumenti digitali.</p>
+      </div>
+      <div class="stack">
+        <h2>Aree di competenza</h2>
+        <ul class="list">
+          <li>AI Literacy e AI Act</li>
+          <li>Intelligenza artificiale generativa</li>
+          <li>Linguaggio e comunicazione</li>
+          <li>Turismo digitale</li>
+          <li>Pubblica Amministrazione</li>
+          <li>Etica dell'intelligenza artificiale</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>Formazione e titoli</h2>
+        <ul class="list">
+          <li>Formatore AI AICA</li>
+          <li>Docente abilitato A012</li>
+          <li>Laurea magistrale in Linguistica Moderna</li>
+          <li>Alta specializzazione in Etica e Intelligenza Artificiale</li>
+          <li>Formazione economica e organizzativa</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <h2>Metodo</h2>
+        <p>La formazione sull'intelligenza artificiale non deve essere né puramente tecnica né puramente teorica.</p>
+        <p>Il metodo parte dai contesti reali: un hotel che risponde agli ospiti, un ufficio che prepara documenti, un Comune che comunica con i cittadini, un professionista che usa strumenti digitali per lavorare meglio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="stack">
+        <h2>Perché Marcello Coppola Academy</h2>
+        <p>Ogni percorso combina spiegazione chiara dei concetti, esempi pratici, attenzione ai rischi, regole operative, verifica dell'apprendimento e documentazione finale.</p>
+      </div>
+      <div class="stack">
+        <h2>Richiedi una proposta formativa</h2>
+        <p>Il percorso può essere costruito per settore, ruolo, livello di partenza e strumenti di IA già utilizzati.</p>
+        <a class="button button--primary" href="/richiedi-proposta-formazione-ai">Richiedi una proposta formativa</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

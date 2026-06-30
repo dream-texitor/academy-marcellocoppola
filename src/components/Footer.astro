@@ -1,0 +1,65 @@
+---
+import { navItems, site } from "@data/site";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="stack">
+      <h2>{site.name}</h2>
+      <p>{site.payoff}</p>
+      <p class="muted">Soggetto erogatore: {site.provider}</p>
+    </div>
+    <nav class="footer-links" aria-label="Link footer">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <div class="stack">
+      <p><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p><strong>Sito:</strong> academy.marcellocoppola.com</p>
+      <p class="footer-note">{site.legalNote}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    background: var(--navy);
+    color: var(--white);
+    padding: 48px 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.4fr;
+    gap: 34px;
+  }
+
+  .site-footer h2 {
+    color: var(--white);
+    font-size: 1.4rem;
+  }
+
+  .footer-links {
+    display: grid;
+    gap: 8px;
+  }
+
+  .site-footer a:hover {
+    color: #8ee3dc;
+  }
+
+  .site-footer .muted,
+  .footer-note {
+    color: #c9d6e2;
+  }
+
+  .footer-note {
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

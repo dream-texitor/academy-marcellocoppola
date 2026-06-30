@@ -1,0 +1,43 @@
+---
+import ContactForm from "@components/ContactForm.astro";
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+---
+
+<BaseLayout
+  title="Richiedi una proposta di formazione AI | Marcello Coppola Academy"
+  description="Richiedi una proposta personalizzata per corsi AI Literacy, formazione AI Act, intelligenza artificiale per aziende, hotel, PA, professionisti e cittadini."
+  canonicalPath="/richiedi-proposta-formazione-ai"
+>
+  <Hero
+    eyebrow="Contatti"
+    title="Richiedi una proposta di formazione AI"
+    subtitle="Compila il modulo per ricevere una proposta personalizzata per aziende, hotel, professionisti, Pubbliche Amministrazioni o percorsi per cittadini."
+    primaryLabel="Scrivi a academy@marcellocoppola.com"
+    primaryHref="mailto:academy@marcellocoppola.com"
+  />
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="card card--shadow">
+        <ContactForm />
+      </div>
+      <aside class="stack">
+        <div class="card stack">
+          <h2>Contatti</h2>
+          <p><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p><strong>Telefono:</strong> {site.phone}</p>
+          <p><strong>Sito:</strong> academy.marcellocoppola.com</p>
+          <p><strong>Soggetto erogatore:</strong> {site.provider}</p>
+        </div>
+        <div class="legal-note">{site.legalNote}</div>
+        <div class="card stack">
+          <h2>Invio richieste</h2>
+          <p>Il modulo è predisposto per inviare i dati tramite endpoint configurabile con variabile ambiente <code>CONTACT_FORM_ENDPOINT</code>.</p>
+          <p class="muted">In assenza di endpoint configurato, il sito invita a scrivere direttamente a {site.email}.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

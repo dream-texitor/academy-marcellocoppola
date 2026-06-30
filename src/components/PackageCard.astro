@@ -1,0 +1,38 @@
+---
+interface Props {
+  name: string;
+  price: string;
+  duration: string;
+  participants: string;
+  includes: string;
+  description: string;
+}
+
+const { name, price, duration, participants, includes, description } = Astro.props;
+---
+
+<article class="card package-card">
+  <div class="stack">
+    <h3>{name}</h3>
+    <p class="price">{price}</p>
+    <p class="muted">{duration} · {participants}</p>
+    <p>{description}</p>
+  </div>
+  <p class="includes"><strong>Include:</strong> {includes}</p>
+</article>
+
+<style>
+  .package-card {
+    display: grid;
+    gap: 22px;
+  }
+
+  .package-card p:not(.price) {
+    color: var(--slate);
+  }
+
+  .includes {
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+  }
+</style>

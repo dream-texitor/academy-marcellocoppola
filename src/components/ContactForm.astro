@@ -1,0 +1,181 @@
+---
+const endpoint = import.meta.env.CONTACT_FORM_ENDPOINT ?? "";
+---
+
+<form class="contact-form" data-contact-form data-endpoint={endpoint} method="post">
+  <div class="form-grid">
+    <label>
+      Nome e cognome *
+      <input name="name" autocomplete="name" required />
+    </label>
+    <label>
+      Organizzazione
+      <input name="organization" autocomplete="organization" />
+    </label>
+    <label>
+      Email *
+      <input name="email" type="email" autocomplete="email" required />
+    </label>
+    <label>
+      Telefono
+      <input name="phone" type="tel" autocomplete="tel" />
+    </label>
+    <label>
+      Target di interesse *
+      <select name="target" required>
+        <option value="">Seleziona</option>
+        <option>Hotel</option>
+        <option>Azienda</option>
+        <option>Professionista</option>
+        <option>PA</option>
+        <option>Cittadini</option>
+        <option>Altro</option>
+      </select>
+    </label>
+  </div>
+  <label>
+    Messaggio *
+    <textarea name="message" rows="6" required></textarea>
+  </label>
+  <label class="privacy">
+    <input name="privacy" type="checkbox" required />
+    <span>Confermo di aver letto l'informativa privacy e autorizzo il trattamento dei dati per essere ricontattato.</span>
+  </label>
+  <label class="honeypot" aria-hidden="true" tabindex="-1">
+    Non compilare questo campo
+    <input name="website" tabindex="-1" autocomplete="off" />
+  </label>
+  <input type="hidden" name="sourcePage" data-source-page />
+  <button class="button button--primary" type="submit" data-submit>Richiedi proposta</button>
+  <p class="form-status" role="status" aria-live="polite" data-status></p>
+</form>
+
+<script>
+  const form = document.querySelector("[data-contact-form]");
+  const statusEl = document.querySelector("[data-status]");
+  const submitButton = document.querySelector("[data-submit]");
+  const sourceInput = document.querySelector("[data-source-page]");
+
+  if (sourceInput instanceof HTMLInputElement) {
+    sourceInput.value = window.location.href;
+  }
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!(form instanceof HTMLFormElement)) return;
+    const endpoint = form.dataset.endpoint;
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    if (String(data.get("website") || "").trim()) {
+      return;
+    }
+
+    if (!endpoint) {
+      if (statusEl) statusEl.textContent = "Endpoint non configurato. Scrivi a academy@marcellocoppola.com.";
+      return;
+    }
+
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Invio in corso...";
+    }
+    if (statusEl) statusEl.textContent = "";
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data
+      });
+
+      if (!response.ok) throw new Error("Invio non riuscito");
+      form.reset();
+      if (statusEl) statusEl.textContent = "Richiesta inviata correttamente. Ti risponderemo appena possibile.";
+    } catch {
+      if (statusEl) statusEl.textContent = "Non è stato possibile inviare la richiesta. Scrivi a academy@marcellocoppola.com.";
+    } finally {
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Richiedi proposta";
+      }
+    }
+  });
+</script>
+
+<style>
+  .contact-form {
+    display: grid;
+    gap: 18px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  label {
+    display: grid;
+    gap: 7px;
+    color: var(--navy);
+    font-weight: 780;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--navy);
+    padding: 12px 13px;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 3px solid rgba(17, 140, 132, 0.18);
+    border-color: var(--teal);
+  }
+
+  .privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--slate);
+    font-weight: 500;
+  }
+
+  .privacy input {
+    width: auto;
+    margin-top: 7px;
+  }
+
+  .honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .form-status {
+    color: var(--teal-dark);
+    font-weight: 800;
+  }
+
+  button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 760px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
