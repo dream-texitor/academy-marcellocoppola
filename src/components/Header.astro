@@ -1,15 +1,12 @@
 ---
-import { navItems, site } from "@data/site";
+import { navItems } from "@data/site";
 ---
 
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Marcello Coppola Academy home">
-      <span class="brand-mark">MCA</span>
-      <span>
-        <strong>{site.name}</strong>
-        <small>{site.payoff}</small>
-      </span>
+      <img src="/assets/logo-marcello-coppola-academy.png" alt="Marcello Coppola Academy" class="brand-logo brand-logo--full" />
+      <img src="/assets/logo-marcello-coppola-academy-icon.png" alt="" class="brand-logo brand-logo--icon" aria-hidden="true" />
     </a>
     <button class="menu-toggle" type="button" aria-label="Apri menu" aria-expanded="false" data-menu-toggle>
       <span></span>
@@ -55,35 +52,26 @@ import { navItems, site } from "@data/site";
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 13px;
+    flex: 0 0 auto;
     color: var(--navy);
   }
 
-  .brand-mark {
-    display: grid;
-    width: 44px;
-    height: 44px;
-    place-items: center;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--navy), var(--navy-2));
-    color: var(--white);
-    font-size: 0.82rem;
-    font-weight: 900;
-  }
-
-  .brand strong,
-  .brand small {
+  .brand-logo {
     display: block;
+    width: auto;
+    object-fit: contain;
   }
 
-  .brand strong {
-    font-size: 1.03rem;
-    line-height: 1.1;
+  .brand-logo--full {
+    height: 48px;
+    max-width: min(330px, 36vw);
   }
 
-  .brand small {
-    color: var(--muted);
-    font-size: 0.76rem;
+  .brand-logo--icon {
+    display: none;
+    height: 44px;
+    max-width: 44px;
+    border-radius: 10px;
   }
 
   .main-nav {
@@ -152,6 +140,16 @@ import { navItems, site } from "@data/site";
 
     .main-nav a {
       padding: 11px 10px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .brand-logo--full {
+      display: none;
+    }
+
+    .brand-logo--icon {
+      display: block;
     }
   }
 </style>

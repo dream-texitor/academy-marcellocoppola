@@ -5,6 +5,9 @@ import { navItems, site } from "@data/site";
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="stack">
+      <a class="footer-logo-link" href="/" aria-label="Marcello Coppola Academy home">
+        <img src="/assets/logo-marcello-coppola-academy.png" alt="Marcello Coppola Academy" class="footer-logo" />
+      </a>
       <h2>{site.name}</h2>
       <p>{site.payoff}</p>
       <div class="company-data">
@@ -47,6 +50,23 @@ import { navItems, site } from "@data/site";
   .site-footer h2 {
     color: var(--white);
     font-size: 1.4rem;
+  }
+
+  .footer-logo-link {
+    display: inline-flex;
+    width: fit-content;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 8px 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+  }
+
+  .footer-logo {
+    display: block;
+    width: auto;
+    height: 42px;
+    max-width: 280px;
+    object-fit: contain;
   }
 
   .company-data {
