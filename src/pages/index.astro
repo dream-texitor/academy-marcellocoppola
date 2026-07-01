@@ -55,7 +55,7 @@ const coursesJsonLd = [
         <p>L'art. 4 dell'AI Act richiede a fornitori e utilizzatori di sistemi di intelligenza artificiale di adottare misure per garantire un livello sufficiente di alfabetizzazione sull'IA al personale e alle persone che utilizzano questi strumenti per loro conto.</p>
         <p>Per le organizzazioni questo significa che, se dipendenti o collaboratori utilizzano strumenti di IA nel lavoro quotidiano, è necessario prevedere una formazione adeguata, proporzionata al contesto e documentabile.</p>
       </div>
-      <div class="evidence">Non basta usare l'IA. Bisogna saperla usare, governarla e documentare le misure formative adottate.</div>
+      <div class="evidence ai-act-statement">Non basta usare l'IA. Bisogna saperla usare, governarla e documentare le misure formative adottate.</div>
     </div>
   </section>
 
@@ -131,3 +131,45 @@ const coursesJsonLd = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .ai-act-statement {
+    position: relative;
+    align-self: center;
+    overflow: hidden;
+    border-left-width: 6px;
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at 92% 8%, rgba(15, 159, 149, 0.16), transparent 8rem),
+      linear-gradient(135deg, #ffffff, #eefbf9);
+    color: var(--navy);
+    font-size: clamp(1.16rem, 2vw, 1.42rem);
+    font-weight: 800;
+    line-height: 1.42;
+    padding: 28px 30px 28px 34px;
+    box-shadow: var(--shadow);
+  }
+
+  .ai-act-statement::before {
+    content: "“";
+    position: absolute;
+    top: -22px;
+    right: 22px;
+    color: rgba(15, 159, 149, 0.18);
+    font-size: 7rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  @media (max-width: 620px) {
+    .ai-act-statement {
+      font-size: 1.08rem;
+      padding: 22px 20px 22px 24px;
+    }
+
+    .ai-act-statement::before {
+      font-size: 5rem;
+      right: 14px;
+    }
+  }
+</style>
