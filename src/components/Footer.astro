@@ -7,10 +7,18 @@ import { navItems, site } from "@data/site";
     <div class="stack">
       <h2>{site.name}</h2>
       <p>{site.payoff}</p>
-      <p class="muted">Soggetto erogatore: {site.provider}</p>
+      <div class="company-data">
+        <p><strong>{site.company.name}</strong></p>
+        <p>{site.company.address}</p>
+        <p>{site.company.city}</p>
+        <p>{site.company.vat}</p>
+        <p>{site.company.rea}</p>
+      </div>
     </div>
     <nav class="footer-links" aria-label="Link footer">
       {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/termini-e-condizioni">Termini e Condizioni</a>
     </nav>
     <div class="stack">
       <p><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></p>
@@ -23,15 +31,17 @@ import { navItems, site } from "@data/site";
 <style>
   .site-footer {
     border-top: 1px solid var(--line);
-    background: var(--navy);
+    background:
+      radial-gradient(circle at 88% 0%, rgba(15, 159, 149, 0.16), transparent 20rem),
+      linear-gradient(135deg, #061a2e, var(--navy));
     color: var(--white);
-    padding: 48px 0;
+    padding: 44px 0;
   }
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1.4fr;
-    gap: 34px;
+    grid-template-columns: 1.15fr 0.85fr 1.25fr;
+    gap: 30px;
   }
 
   .site-footer h2 {
@@ -39,9 +49,16 @@ import { navItems, site } from "@data/site";
     font-size: 1.4rem;
   }
 
+  .company-data {
+    display: grid;
+    gap: 3px;
+    color: #d8e5ef;
+    font-size: 0.94rem;
+  }
+
   .footer-links {
     display: grid;
-    gap: 8px;
+    gap: 7px;
   }
 
   .site-footer a:hover {

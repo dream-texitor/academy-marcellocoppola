@@ -1,0 +1,62 @@
+---
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+---
+
+<BaseLayout
+  title="Termini e Condizioni | Marcello Coppola Academy"
+  description="Termini e Condizioni del sito Marcello Coppola Academy: informazioni su uso del sito, richieste di proposta, prezzi, contenuti e responsabilità."
+  canonicalPath="/termini-e-condizioni"
+>
+  <Hero
+    eyebrow="Informazioni legali"
+    title="Termini e Condizioni"
+    subtitle="Condizioni generali di utilizzo del sito Marcello Coppola Academy e informazioni sulle richieste di proposta formativa."
+    primaryLabel="Contatta l'Academy"
+    primaryHref="/richiedi-proposta-formazione-ai"
+  />
+
+  <section class="legal-page">
+    <div class="legal-content">
+      <h2>Dati del gestore</h2>
+      <p>Il sito è gestito da {site.company.name}, con sede in {site.company.address}, {site.company.city}, {site.company.vat}, {site.company.rea}. Email di contatto: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+      <h2>Oggetto del sito</h2>
+      <p>Il sito presenta percorsi formativi su AI Literacy, AI Act, intelligenza artificiale e formazione rivolta ad aziende, hotel, Pubbliche Amministrazioni, professionisti e cittadini.</p>
+
+      <h2>Natura informativa dei contenuti</h2>
+      <p>I contenuti del sito hanno finalità informativa e commerciale generale. Non costituiscono consulenza legale, fiscale, privacy o compliance personalizzata.</p>
+
+      <h2>Richiesta proposta</h2>
+      <p>L'invio del form non costituisce contratto, ordine o accettazione automatica. Serve esclusivamente a richiedere informazioni o una proposta commerciale, che potrà essere predisposta in base alle esigenze indicate.</p>
+
+      <h2>Prezzi</h2>
+      <p>Eventuali prezzi indicati sul sito sono da intendersi, salvo diversa indicazione, IVA esclusa e soggetti a conferma nella proposta commerciale.</p>
+
+      <h2>AI Act e formazione</h2>
+      <p>I percorsi offrono formazione documentabile, materiali, attestati di partecipazione ed eventuali strumenti operativi. Non costituiscono certificazione ufficiale di conformità complessiva all'AI Act, salvo diversa specifica contrattuale.</p>
+
+      <h2>Proprietà intellettuale</h2>
+      <p>Testi, materiali, struttura, contenuti formativi e contenuti del sito appartengono a {site.company.name} o ai rispettivi titolari e non possono essere copiati, riprodotti o riutilizzati senza autorizzazione.</p>
+
+      <h2>Uso corretto del sito</h2>
+      <p>È vietato utilizzare il sito in modo improprio, inviare dati falsi, tentare accessi non autorizzati, effettuare scraping abusivo o interferire con il funzionamento del sito e dei suoi servizi.</p>
+
+      <h2>Limitazione di responsabilità</h2>
+      <p>Il gestore cura l'aggiornamento dei contenuti e il corretto funzionamento del sito, ma non garantisce l'assenza assoluta di errori, omissioni o interruzioni temporanee. Le informazioni pubblicate devono essere valutate nel contesto specifico e, ove necessario, integrate con consulenze specialistiche.</p>
+
+      <h2>Link esterni</h2>
+      <p>Qualora il sito contenga link verso siti terzi, il gestore non è responsabile dei contenuti, dei servizi o delle policy adottate da tali siti.</p>
+
+      <h2>Modifiche ai termini</h2>
+      <p>Il gestore può aggiornare i presenti termini. La versione pubblicata sul sito è quella vigente al momento della consultazione.</p>
+
+      <h2>Legge applicabile</h2>
+      <p>Per eventuali controversie si applica la legge italiana, fatto salvo ogni foro inderogabile previsto dalla normativa applicabile.</p>
+
+      <p class="legal-updated"><strong>Data ultimo aggiornamento:</strong> luglio 2026.</p>
+      <p class="legal-updated">Il presente testo ha finalità informativa generale e potrà essere aggiornato o integrato anche a seguito di verifica con consulente legale.</p>
+    </div>
+  </section>
+</BaseLayout>

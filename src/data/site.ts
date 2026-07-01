@@ -4,7 +4,14 @@ export const site = {
   url: "https://academy.marcellocoppola.com",
   email: "academy@marcellocoppola.com",
   phone: "[inserire telefono]",
-  provider: "TENET S.r.l.",
+  provider: "Tenet Srl a socio unico",
+  company: {
+    name: "Tenet Srl a socio unico",
+    address: "Diramazione Vicoli Rota, 13",
+    city: "80067 Sorrento (NA)",
+    vat: "P.IVA e C.F. 10496301218",
+    rea: "REA NA-1110603"
+  },
   legalNote:
     "I percorsi non costituiscono una certificazione di conformità complessiva all'AI Act. La finalità è fornire formazione documentabile di AI Literacy e supportare organizzazioni e persone nell'adozione di buone pratiche per l'uso consapevole dell'intelligenza artificiale."
 };

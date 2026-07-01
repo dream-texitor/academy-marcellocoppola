@@ -1,0 +1,69 @@
+---
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+---
+
+<BaseLayout
+  title="Privacy Policy | Marcello Coppola Academy"
+  description="Privacy Policy di Marcello Coppola Academy: informazioni sul trattamento dei dati personali raccolti tramite sito e form contatti."
+  canonicalPath="/privacy-policy"
+>
+  <Hero
+    eyebrow="Informativa privacy"
+    title="Privacy Policy"
+    subtitle="Informazioni sul trattamento dei dati personali raccolti tramite il sito Marcello Coppola Academy e il form contatti."
+    primaryLabel="Contatta l'Academy"
+    primaryHref="/richiedi-proposta-formazione-ai"
+  />
+
+  <section class="legal-page">
+    <div class="legal-content">
+      <h2>Titolare del trattamento</h2>
+      <p>Il titolare del trattamento è {site.company.name}, con sede in {site.company.address}, {site.company.city}, {site.company.vat}, {site.company.rea}. Email di contatto: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+      <h2>Tipologie di dati trattati</h2>
+      <p>Il sito può trattare dati personali forniti volontariamente dall'utente e dati tecnici necessari al funzionamento e alla sicurezza del sito.</p>
+      <p>I dati raccolti tramite form possono includere: nome e cognome, organizzazione, email, telefono, target di interesse, messaggio, pagina di provenienza ed eventuali dati tecnici connessi all'invio della richiesta.</p>
+
+      <h2>Finalità del trattamento</h2>
+      <p>I dati personali sono trattati per le seguenti finalità:</p>
+      <ul>
+        <li>rispondere a richieste di informazioni;</li>
+        <li>predisporre proposte formative personalizzate;</li>
+        <li>gestire contatti precontrattuali;</li>
+        <li>gestire eventuali adempimenti amministrativi o contrattuali successivi;</li>
+        <li>garantire la sicurezza tecnica del sito e il suo corretto funzionamento.</li>
+      </ul>
+
+      <h2>Base giuridica</h2>
+      <p>Le basi giuridiche del trattamento sono la richiesta dell'interessato e l'esecuzione di misure precontrattuali, gli eventuali obblighi di legge e il legittimo interesse del titolare alla sicurezza e al corretto funzionamento del sito.</p>
+
+      <h2>Modalità del trattamento</h2>
+      <p>Il trattamento avviene con strumenti informatici e organizzativi adeguati, secondo criteri di liceità, correttezza, trasparenza e minimizzazione dei dati. Sono adottate misure ragionevoli per proteggere i dati da accessi non autorizzati, perdita o uso improprio.</p>
+
+      <h2>Conservazione dei dati</h2>
+      <p>I dati sono conservati per il tempo necessario alla gestione della richiesta e dei successivi contatti. In caso di instaurazione di un rapporto contrattuale o di obblighi di legge, i dati potranno essere conservati per i tempi previsti dalla normativa applicabile.</p>
+
+      <h2>Destinatari e fornitori tecnici</h2>
+      <p>I dati potranno essere trattati da fornitori tecnici e soggetti che supportano il titolare nella gestione del sito e delle richieste, tra cui servizi di hosting, servizi email, manutenzione tecnica ed eventuali consulenti amministrativi o fiscali quando necessario.</p>
+
+      <h2>Trasferimenti extra UE</h2>
+      <p>Non sono previsti trasferimenti di dati personali verso Paesi extra UE. Qualora in futuro fossero utilizzati fornitori con trasferimenti extra UE, il titolare adotterà garanzie adeguate secondo la normativa applicabile.</p>
+
+      <h2>Diritti dell'interessato</h2>
+      <p>L'interessato può esercitare, nei casi previsti, i diritti di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità dei dati ove applicabile. È inoltre possibile proporre reclamo al Garante per la protezione dei dati personali.</p>
+      <p>Per esercitare i diritti è possibile scrivere a <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+      <h2>Dati di navigazione e log tecnici</h2>
+      <p>I sistemi informatici e le procedure software preposte al funzionamento del sito possono acquisire dati tecnici, come indirizzi IP, informazioni sul browser, data e ora delle richieste e log di sicurezza. Tali dati sono utilizzati per il funzionamento, la sicurezza e la manutenzione tecnica del sito.</p>
+
+      <h2>Cookie e strumenti simili</h2>
+      <p>Allo stato attuale il sito non utilizza cookie di profilazione o marketing e non sono presenti Google Analytics, Meta Pixel o strumenti analoghi di tracciamento.</p>
+      <p>Eventuali strumenti tecnici sono utilizzati solo per il funzionamento del sito. Se in futuro saranno introdotti strumenti statistici o marketing non tecnici, verrà richiesto il consenso ove previsto dalla normativa applicabile.</p>
+
+      <p class="legal-updated"><strong>Data ultimo aggiornamento:</strong> luglio 2026.</p>
+      <p class="legal-updated">Il presente testo ha finalità informativa generale e potrà essere aggiornato o integrato anche a seguito di verifica con consulente legale o privacy.</p>
+    </div>
+  </section>
+</BaseLayout>
