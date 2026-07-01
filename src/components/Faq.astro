@@ -22,20 +22,22 @@ import { faq } from "@data/site";
 <style>
   .faq-list {
     display: grid;
-    gap: 12px;
+    gap: 10px;
   }
 
   .faq-item {
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--white);
-    padding: 18px 20px;
+    border: 1px solid rgba(216, 228, 238, 0.9);
+    border-radius: 12px;
+    background: linear-gradient(180deg, #ffffff, #f8fbfd);
+    padding: 16px 18px;
+    box-shadow: 0 8px 24px rgba(7, 29, 51, 0.05);
   }
 
   .faq-item summary {
     cursor: pointer;
     color: var(--navy);
     font-weight: 850;
+    list-style-position: outside;
   }
 
   .faq-item p {

@@ -10,6 +10,7 @@ const { title, text, href, cta } = Astro.props;
 ---
 
 <article class="card target-card">
+  <span class="target-icon" aria-hidden="true"></span>
   <h3>{title}</h3>
   <p>{text}</p>
   <a href={href}>{cta}</a>
@@ -17,8 +18,65 @@ const { title, text, href, cta } = Astro.props;
 
 <style>
   .target-card {
+    position: relative;
     display: grid;
     gap: 11px;
+    overflow: hidden;
+    border-top: 4px solid var(--teal);
+  }
+
+  .target-card::after {
+    content: "";
+    position: absolute;
+    right: -36px;
+    top: -36px;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background: rgba(15, 159, 149, 0.08);
+  }
+
+  .target-card:nth-child(2) {
+    border-top-color: #2f6fa5;
+  }
+
+  .target-card:nth-child(3) {
+    border-top-color: #435b7d;
+  }
+
+  .target-card:nth-child(4) {
+    border-top-color: #0f9f95;
+  }
+
+  .target-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background:
+      linear-gradient(135deg, rgba(15, 159, 149, 0.18), rgba(7, 29, 51, 0.08));
+    position: relative;
+  }
+
+  .target-icon::before,
+  .target-icon::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+
+  .target-icon::before {
+    width: 8px;
+    height: 8px;
+    left: 8px;
+    top: 9px;
+  }
+
+  .target-icon::after {
+    width: 6px;
+    height: 6px;
+    right: 9px;
+    bottom: 8px;
   }
 
   .target-card p {
@@ -29,5 +87,6 @@ const { title, text, href, cta } = Astro.props;
     align-self: end;
     color: var(--teal-dark);
     font-weight: 850;
+    position: relative;
   }
 </style>

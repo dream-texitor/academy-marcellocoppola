@@ -25,6 +25,7 @@ const {
 ---
 
 <section class="hero">
+  <div class="hero-pattern" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="stack">
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}
@@ -48,12 +49,45 @@ const {
 
 <style>
   .hero {
+    position: relative;
+    overflow: hidden;
     border-bottom: 1px solid var(--line);
-    padding: 56px 0 46px;
-    background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+    padding: 64px 0 52px;
+    background:
+      radial-gradient(circle at 88% 18%, rgba(15, 159, 149, 0.18), transparent 22rem),
+      radial-gradient(circle at 8% 12%, rgba(18, 58, 90, 0.12), transparent 26rem),
+      linear-gradient(135deg, #f4f9fb 0%, #fbfaf6 56%, #ffffff 100%);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(7, 29, 51, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(7, 29, 51, 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+    pointer-events: none;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    right: min(4vw, 64px);
+    top: 24px;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgba(15, 159, 149, 0.18);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, rgba(15, 159, 149, 0.18) 0 3px, transparent 4px),
+      radial-gradient(circle at 68% 34%, rgba(7, 29, 51, 0.14) 0 4px, transparent 5px),
+      radial-gradient(circle at 28% 72%, rgba(7, 29, 51, 0.12) 0 3px, transparent 4px);
+    opacity: 0.55;
   }
 
   .hero-grid {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
     gap: 28px;
@@ -63,6 +97,10 @@ const {
   .hero-text {
     max-width: 780px;
     color: var(--slate);
+  }
+
+  .hero h1 {
+    text-wrap: balance;
   }
 
   .microcopy {
@@ -88,6 +126,10 @@ const {
   @media (max-width: 900px) {
     .hero {
       padding: 42px 0 34px;
+    }
+
+    .hero-pattern {
+      display: none;
     }
 
     .hero-grid {
