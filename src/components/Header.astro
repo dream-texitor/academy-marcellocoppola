@@ -5,7 +5,7 @@ import { navItems } from "@data/site";
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Marcello Coppola Academy home">
-      <img src="/assets/logo-marcello-coppola-academy.png" alt="Marcello Coppola Academy" class="brand-logo brand-logo--full" />
+      <img src="/assets/logo-marcello-coppola-academy-header.png" alt="Marcello Coppola Academy" class="brand-logo brand-logo--full" />
       <img src="/assets/logo-marcello-coppola-academy-icon.png" alt="" class="brand-logo brand-logo--icon" aria-hidden="true" />
     </a>
     <button class="menu-toggle" type="button" aria-label="Apri menu" aria-expanded="false" data-menu-toggle>
@@ -43,16 +43,17 @@ import { navItems } from "@data/site";
 
   .header-inner {
     display: flex;
-    min-height: 68px;
+    min-height: 78px;
     align-items: center;
     justify-content: space-between;
-    gap: 22px;
+    gap: 28px;
   }
 
   .brand {
     display: inline-flex;
     align-items: center;
     flex: 0 0 auto;
+    min-width: 0;
     color: var(--navy);
   }
 
@@ -63,8 +64,8 @@ import { navItems } from "@data/site";
   }
 
   .brand-logo--full {
-    height: 48px;
-    max-width: min(330px, 36vw);
+    height: 62px;
+    max-width: min(390px, 34vw);
   }
 
   .brand-logo--icon {
@@ -76,10 +77,12 @@ import { navItems } from "@data/site";
 
   .main-nav {
     display: flex;
+    flex: 1 1 auto;
     align-items: center;
+    justify-content: flex-end;
     gap: 6px;
     color: var(--slate);
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     font-weight: 750;
   }
 
@@ -114,14 +117,24 @@ import { navItems } from "@data/site";
     background: var(--navy);
   }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1180px) {
+    .header-inner {
+      min-height: 76px;
+    }
+
+    .brand-logo--full {
+      height: 56px;
+      max-width: min(360px, 62vw);
+    }
+
     .menu-toggle {
       display: block;
+      flex: 0 0 auto;
     }
 
     .main-nav {
       position: absolute;
-      top: 68px;
+      top: 76px;
       right: 20px;
       left: 20px;
       display: none;
@@ -144,12 +157,22 @@ import { navItems } from "@data/site";
   }
 
   @media (max-width: 620px) {
+    .header-inner {
+      min-height: 68px;
+    }
+
     .brand-logo--full {
       display: none;
     }
 
     .brand-logo--icon {
       display: block;
+      height: 46px;
+      max-width: 46px;
+    }
+
+    .main-nav {
+      top: 68px;
     }
   }
 </style>
